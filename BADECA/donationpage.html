@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            justify-content: space-between;
         }
 
         header {
@@ -18,18 +19,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px;
+            padding: 20px;
         }
 
         .home-button{
             display: inline-block;
             padding: 10px 20px;
-            font-size: 18px;
+            font-size: 12px;
             font-weight: bolder;
             border-radius: 5px;
-            position:fixed;
+            position:absolute;
             top: 10px;
-            left: 10px;
+            left: 0px;
             background-color: none; /* Donate button background color */
             color:black; /* Donate button text color */
             text-decoration: underline;
@@ -38,52 +39,82 @@
         .project-button {
             display: inline-block;
             padding: 10px 20px;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bolder;
             border-radius: 5px;
-            position:fixed;
+            position:absolute;
             top: 10px;
-            right: 10px;
+            right: 0px;
             background-color: none; /* Donate button background color */
             color:black; /* Donate button text color */
             text-decoration: underline;
         }
 
-        #mainContent {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px;
+        .image-container {
+            text-align: center;
+            position: fixed;
+            top: 20vh;
+            width: 70vw;
+            left: 50vw;
+            height: 100%;
+            max-height: 200px;
+            transform: translate(-50%, -50%);
+        }
+
+        .text-container {
+            text-align: justify;
+            text-wrap: none;
+            position: fixed;
+            top: 45vh;
+            left: 50vw;
+            width: 90vw;
+            height: 20vh;
+            padding: 0px;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
         }
 
         #organizationImage {
-            width: 40%; /* Adjust the width as needed */
-            height: auto;
+            width: 100%; /* Adjust the width as needed */
+            height: 100%;
+            left: 0px;
+
         }
 
         #missionText {
-            width: 55%; /* Adjust the width as needed */
-            text-align: left;
+            font-size: 80%;
+            width: 100%; /* Adjust the width as needed */
+            text-align: center;
         }
 
         #donationForm {
-            margin: 20px;
-            text-align: center;
+            margin: 0px;
+            padding-left: 12vw;
+            text-align: left;
+            position: fixed;
+            height: 30vh;
+            bottom: 0%;
+            left: 0%;  
         }
 
         #donationForm select,
         #donationForm input{
-            margin-bottom: 10px;
-            width: 15%;
-            padding: 5px;
+            margin-bottom: 0px;
+            width: 50%;
+            padding-right: 20%;
             box-sizing: border-box;
             margin-right: 25px;
             margin-top: 25px;
+            border: 1px solid #000;
+            box-sizing: border-box;
         }
 
         #donationForm button {
+            position:fixed;
+            bottom:5%;
+            left:35%;
             margin-bottom: 10px;
-            width: 7.5%;
+            width: fit-content;
             padding: 5px;
             box-sizing: border-box;
         }
@@ -100,18 +131,21 @@
 <body>
 
     <header>
-        <a href="#" class="home-button">BADECA USA</a>
+        <a href="index.html" class="home-button">BADECA USA</a>
 
         <a href="#" class="project-button">PROJECTS</a>
     </header>
 
-    <div id="mainContent">
+    <div class="image-container">
         <img id="organizationImage" src="images/badeca 002.jpg" alt="Organization Image">
+     </div>
+
+    <div class="text-container">
         <h2 id="missionText">
             BADECA USA, a non-profit organization based in the USA, is dedicated to enhancing the well-being of Bamumbu residents. 
             Focused on healthcare accessibility, education quality, and overall living standards.
-             BADECA USA collaborates with the local community to implement sustainable solutions, fostering positive change and 
-             empowering the people of Bamumbu.
+            BADECA USA collaborates with the local community to implement sustainable solutions, fostering positive change and 
+            empowering the people of Bamumbu.
         </h2>
     </div>
 
@@ -119,16 +153,22 @@
         <label for="donationAmount">Donation Amount:</label>
         <select id="donationAmount">
             <option value="10">$10</option>
-            <option value="20">$20</option>
+            <option value="20">$25</option>
             <option value="50">$50</option>
             <option value="100">$100</option>
+            <option value="100">$200</option>
+            <option value="100">$500</option>
+            <option value="100">$1000</option>
+            <option value="100">$5000</option>
             <!-- Add more options as needed -->
         </select>
 
         <label for="paymentMethod">Payment Method:</label>
         <select id="paymentMethod">
-            <option value="creditCard">Credit Card</option>
-            <option value="paypal">PayPal</option>
+            <option value="paypal">Paypal</option>
+            <option value="CashApp">CashApp</option>
+            <option value="Bank">Bank Deposit</option>
+            <option value="Check">Check</option>
             <option value="other">Other</option>
             <!-- Add more options as needed -->
         </select>
@@ -136,7 +176,7 @@
         <label for="emailAddress">Email Address:</label>
         <input type="email" id="emailAddress" placeholder="Enter your email">
 
-        <button id="donateButton" onclick="makeDonation()">Donate Now</button>
+        <button id="donateButton" onclick="makeDonation()">Submit Donation Form</button>
     </div>
 
     <script>
