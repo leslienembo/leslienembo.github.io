@@ -3,38 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three-Line Menu Button</title>
+    <title>Menu</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            background-image: url('images/wabane fabric.jpg'); /* Replace 'your-background-image.jpg' with the actual path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            color: #fff;
         }
 
-        .menu-btn {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 10px;
-            background-color: #333;
-            color: red;
+        nav {
+            text-align: left;
+            font-size: 170%;
+            margin: 20px 20px;
         }
 
-        .menu-line {
-            height: 4px;
-            width: 30px;
-            background-color: greenyellow;
-            margin: 6px 0;
+        nav a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 20px 20px;
+            margin-bottom: 5px;
+            margin-right: 100px;
+            border-radius: 5px;
+            background-color: rgba(3, 52, 3, 0.9); /* Add a semi-transparent background to improve text visibility */
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: darkgreen (0, 0, 0, 0.7); /* Darken the background on hover */
         }
     </style>
 </head>
 <body>
 
-    <div class="menu-btn">
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#board">Board</a>
+        <a href="#projects">Projects</a>
+        <a href="donationpage.html">How to Support</a>
+        <a href="#contact">Contact</a>
+        <a href="#members">Members</a>
+    </nav>
+
+    <!-- Your content for About, Projects, Members, and How to Support goes here -->
 
 </body>
 </html>
